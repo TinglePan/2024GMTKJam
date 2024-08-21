@@ -1,0 +1,180 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2u208vkq8mui"]
+
+[ext_resource type="Script" path="res://Scripts/MainTab.cs" id="1_cbnca"]
+[ext_resource type="Script" path="res://Scripts/DialogueBox.cs" id="1_xhvs5"]
+[ext_resource type="Script" path="res://Scripts/OptionsMenu.cs" id="3_3mmnp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu1lw"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="MainTab" type="Control"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cbnca")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lu1lw")
+
+[node name="Info" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.828
+anchor_bottom = 0.395
+offset_right = 0.143921
+offset_bottom = 0.0399933
+
+[node name="Label" type="Label" parent="Info"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.242
+offset_left = 363.5
+offset_top = 12.0
+offset_right = -363.5
+offset_bottom = 0.0479965
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Statistics"
+horizontal_alignment = 1
+
+[node name="Content" type="MarginContainer" parent="Info"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Info/Content"]
+layout_mode = 2
+
+[node name="PlayTime" type="Label" parent="Info/Content/VBoxContainer"]
+layout_mode = 2
+text = "Play time: 1:22:23"
+
+[node name="Scales" type="Label" parent="Info/Content/VBoxContainer"]
+layout_mode = 2
+text = "Scales: 5 sc"
+
+[node name="InvertedScales" type="Label" parent="Info/Content/VBoxContainer"]
+layout_mode = 2
+text = "Inverted scales: 5 isc"
+
+[node name="TimeScales" type="Label" parent="Info/Content/VBoxContainer"]
+layout_mode = 2
+text = "Time scales: x5 tsc"
+
+[node name="Buildings" type="Label" parent="Info/Content/VBoxContainer"]
+layout_mode = 2
+text = "Buildings: 5 total, 2 pond, 3 cave"
+
+[node name="Creatures" type="Label" parent="Info/Content/VBoxContainer"]
+layout_mode = 2
+text = "Creatures: 5 total, 3 carp, 2 snake, 1 loong"
+
+[node name="Log" type="Control" parent="."]
+layout_mode = 1
+anchor_left = -0.018
+anchor_top = 0.395
+anchor_right = 0.828
+anchor_bottom = 1.0
+offset_left = 20.736
+offset_top = 0.0399933
+offset_right = 0.143921
+grow_vertical = 0
+script = ExtResource("1_xhvs5")
+
+[node name="Label" type="Label" parent="Log"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.158
+offset_left = 363.5
+offset_top = 12.0
+offset_right = -363.5
+offset_bottom = 0.0639954
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Log"
+horizontal_alignment = 1
+
+[node name="Content" type="MarginContainer" parent="Log"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.163
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.104
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Log/Content"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Log/Content/ScrollContainer"]
+layout_mode = 2
+
+[node name="Options" type="Control" parent="."]
+custom_minimum_size = Vector2(198, 400)
+layout_mode = 1
+anchor_left = 0.828
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 198.144
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("3_3mmnp")
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -69.0
+offset_top = 12.0
+offset_right = 68.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Options"
+
+[node name="Content" type="MarginContainer" parent="Options"]
+custom_minimum_size = Vector2(198, 370)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 74.0
+offset_bottom = 454.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Content"]
+layout_mode = 2
+theme_override_constants/separation = 24

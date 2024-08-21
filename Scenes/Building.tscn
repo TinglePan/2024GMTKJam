@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgqsm5l0b2sr1"]
+
+[ext_resource type="Script" path="res://Scripts/BuildingTab.cs" id="1_ebscq"]
+
+[node name="Building" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ebscq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="Info" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Info"]
+layout_mode = 1
+offset_right = 158.0
+offset_bottom = 40.0
+theme_override_constants/separation = 64
+
+[node name="Name" type="Label" parent="MarginContainer/Info/HBoxContainer"]
+layout_mode = 2
+text = "Pond"
+
+[node name="Level" type="Label" parent="MarginContainer/Info/HBoxContainer"]
+layout_mode = 2
+text = "Level 2"
+
+[node name="Creatures" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Creatures"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.078
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.0480003
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Creatures/ScrollContainer"]
+layout_mode = 2

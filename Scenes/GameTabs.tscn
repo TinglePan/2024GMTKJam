@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://841dxrpijnnm"]
+
+[ext_resource type="Script" path="res://Scripts/GameTabs.cs" id="1_5ql38"]
+[ext_resource type="PackedScene" uid="uid://d2u208vkq8mui" path="res://Scenes/MainTab.tscn" id="1_nd8xh"]
+[ext_resource type="PackedScene" uid="uid://cbgdjp5ns5upi" path="res://Scenes/Land.tscn" id="2_5l5jo"]
+[ext_resource type="PackedScene" uid="uid://dgqsm5l0b2sr1" path="res://Scenes/Building.tscn" id="3_wvotf"]
+
+[node name="TabContainer" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+script = ExtResource("1_5ql38")
+
+[node name="Main" parent="." instance=ExtResource("1_nd8xh")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Land" parent="." instance=ExtResource("2_5l5jo")]
+visible = false
+layout_mode = 2
+
+[node name="Building" parent="." instance=ExtResource("3_wvotf")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
